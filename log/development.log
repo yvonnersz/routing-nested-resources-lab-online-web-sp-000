@@ -927,3 +927,53 @@ DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (cal
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("title", "created_at", "updated_at", "artist_id") VALUES (?, ?, ?, ?)[0m  [["title", "Monkey Gone to Heaven"], ["created_at", "2020-06-24 07:40:34.018004"], ["updated_at", "2020-06-24 07:40:34.018004"], ["artist_id", 4]]
   [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 75.109.181.155 at 2020-06-24 07:41:30 +0000
+Cannot render console from 75.109.181.155! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb (4.2ms)
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/artists/1" for 75.109.181.155 at 2020-06-24 07:41:42 +0000
+Cannot render console from 75.109.181.155! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  Rendered artists/show.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.2ms)
+
+
+  
+SyntaxError (/home/cool-designer-4290/routing-nested-resources-lab-online-web-sp-000/app/views/artists/show.html.erb:4: syntax error, unexpected '(', expecting ')'
+... song.title, @artist_song_path(@artist_id, song_id) );@outpu...
+...                              ^
+/home/cool-designer-4290/routing-nested-resources-lab-online-web-sp-000/app/views/artists/show.html.erb:4: syntax error, unexpected ')', expecting '='
+..._song_path(@artist_id, song_id) );@output_buffer.safe_append...
+...                              ^
+/home/cool-designer-4290/routing-nested-resources-lab-online-web-sp-000/app/views/artists/show.html.erb:5: syntax error, unexpected end, expecting ')'
+'.freeze;   end 
+            ^~~
+/home/cool-designer-4290/routing-nested-resources-lab-online-web-sp-000/app/views/artists/show.html.erb:8: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/cool-designer-4290/routing-nested-resources-lab-online-web-sp-000/app/views/artists/show.html.erb:10: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/artists/show.html.erb:4: syntax error, unexpected '(', expecting ')'
+app/views/artists/show.html.erb:4: syntax error, unexpected ')', expecting '='
+app/views/artists/show.html.erb:5: syntax error, unexpected end, expecting ')'
+app/views/artists/show.html.erb:8: syntax error, unexpected ensure, expecting ')'
+app/views/artists/show.html.erb:10: syntax error, unexpected end, expecting ')'
+  Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
+  Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (12.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (60.7ms)
