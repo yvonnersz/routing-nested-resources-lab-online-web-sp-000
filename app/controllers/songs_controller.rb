@@ -24,7 +24,8 @@ class SongsController < ApplicationController
       end
     else
       @songs = Song.all
-    end  end
+    end
+  end
 
   def new
     @song = Song.new
